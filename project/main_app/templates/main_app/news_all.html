@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/news_all.css' %}">
+{% endblock %}
+{% block content %}
+<section class="news">
+    <div class="container-fluid">
+        <h1 class="main_title">Все новости</h1>
+        <div class="row justify-content-center">
+            {% for item in news %}
+            <div class="col-lg-4 col-md-6">
+                <div class="news-box">
+                    <div class="news-poster">
+                        <img src="{{item.image.url}}" alt="" class="w-100 h-100">
+                        <a href="{{item.get_absolute_url}}" class="news-hover">
+                            Читать <img src="{%static 'images/arrow-right.png'%}" alt="">
+                        </a>
+                    </div>
+                    <h3><a href="{{item.get_absolute_url}}">{{item.title}}</a></h3>
+                    <p>{{item.pub_date|date:"d M, Y"}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if page_obj.has_other_pages %}
+        <nav aria-label="..." class="ad_pagination">
+            <ul class="pagination">
+
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
+                       tabindex="-1"><img src="{%static 'images/arrow-left-green.png'%}" alt=""></a>
+                </li>
+                {% endif %}
+
+                {% for p in page_obj.paginator.page_range %}
+
+                {% if page_obj.number == p %}
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page={{ p }}">{{ p }} <span class="sr-only">(current)</span></a>
+                </li>
+                {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+                </li>
+                {% endif %}
+
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}"><img src="{%static 'images/arrow-right-green.png'%}" alt=""></a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+

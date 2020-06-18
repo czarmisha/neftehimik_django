@@ -1,0 +1,106 @@
+.news {
+    padding: 100px 0;
+}
+
+.news h2 {
+    font-size: 36px;
+    line-height: 36px;
+    color: #7FB154;
+    font-family: 'BebasNeue-Regular';
+    margin-bottom: 70px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.news h2::before {
+    content: 'НОВОСТИ';
+    position: absolute;
+    top: -110%;
+    right: 0%;
+    color: rgba(104, 104, 104, 0.1);
+    font-size: 1.5em;
+    width: 100%;
+}
+
+.news-box,
+.news-box-mini {
+    margin-bottom: 50px;
+}
+
+.news-box-mini .news-poster {
+    margin-bottom: 0 !important;
+    height: 150px;
+}
+
+.news-box .news-poster {
+    margin-bottom: 20px;
+    position: relative;
+    height: 400px;
+}
+
+.news h3 a {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-family: 'BebasNeue-Bold';
+    color: #6B6B6B;
+    text-align: left;
+}
+
+.news p {
+    font-size: 18px;
+    line-height: 21px;
+    font-family: 'SF UI Regular';
+    color: #939393;
+}
+
+.news-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(26, 69, 0, 0.6);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: 'SF UI Regular';
+    color: #fff;
+}
+.news-hover img{
+    margin-left: 8px;
+}
+.news-hover:hover{
+    color: #fff;
+}
+.news-poster:hover .news-hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.all-news a {
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    font-family: 'BebasNeue-Regular';
+    color: #6B6B6B;
+    text-decoration: underline !important;
+}

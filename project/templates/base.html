@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    {% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'slick/slick.css' %}">
+    <title>{% block page_title %}Нефтехимик {% endblock %}</title>
+</head>
+
+<body>
+<header class="d-flex flex-column">
+    {% include '_inc/nav.html' %}
+    {% block header %} {% endblock %}
+</header>
+<main>
+
+    {% block content%}{% endblock %}
+</main>
+{% include '_inc/footer.html' %}
+
+
+<script src="{% static 'bootstrap/js/jQuery.js' %}"></script>
+<script src="{% static 'bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'scripts/search_ajax.js' %}"></script>
+<script src="{% static 'bootstrap/js/jquery-migrate.js' %}"></script>
+<script src="{% static 'slick/slick.min.js' %}"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('.multiple-items').slick({
+                infinite: true,
+                draggable: true,
+                autoplay: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: true,
+                appendArrows: $('.multiple-items-controls-box'),
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            centerPadding: '80px'
+                        }
+                    },
+                    {
+                        breakpoint: 550,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            centerPadding: '50px'
+                        }
+                    },
+                    {
+                        breakpoint: 500,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ],
+            });
+        });
+
+
+
+</script>
+<script src="{% static 'scripts/burger.js' %}"></script>
+
+</body>
+
+</html>

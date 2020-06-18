@@ -1,0 +1,75 @@
+.about-us {
+    padding: 90px 0;
+}
+
+.about-us h2 {
+    font-size: 36px;
+    line-height: 36px;
+    color: #7FB154;
+    font-family: 'BebasNeue-Regular';
+    margin-bottom: 70px;
+    position: relative;
+    width: 100%;
+}
+
+.about-us h2::before {
+    content: 'О КОМПАНИИ';
+    position: absolute;
+    top: -100%;
+    right: -10%;
+    color: rgba(104, 104, 104, 0.1);
+    font-size: 1.5em;
+    width: 100%;
+}
+
+.about-us-text p {
+    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'SF UI Regular';
+    color: #6B6B6B;
+}
+
+.about-us-statistic {
+    margin-top: 90px;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.statistic-number {
+    font-size: 50px;
+    line-height: 50px;
+    color: #6B6B6B;
+    font-family: 'BebasNeue-Regular';
+    margin-right: 10px;
+}
+
+.statistic-text {
+    font-size: 22px;
+    line-height: 22px;
+    font-family: 'BebasNeue-Regular';
+    color: #6B6B6B;
+    text-transform: uppercase;
+}
+
+
+/* .about-us-shadows::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border: 6px solid rgba(107, 107, 107, 0.05);
+    top: -7%;
+    left: -9%;
+}
+
+.about-us-shadows::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    border: 6px solid #7FB154;
+    bottom: -7%;
+    right: -9%;
+} */

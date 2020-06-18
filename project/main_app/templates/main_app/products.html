@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+<!--{% load mptt_tags %}-->
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+{% block content %}
+<section class="products">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 mb-5">
+                <div class="accordion" id="accordionExample">
+                    {% for node in Categories %}
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                {%if forloop.counter == 1%}
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+                                    {{node}}
+                                </button>
+                                {%else%}
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse{{forloop.counter}}" aria-expanded="false" aria-controls="collapse{{forloop.counter}}">
+                                    {{node}}
+                                </button>
+                                {%endif%}
+                            </h5>
+                        </div>
+                        {%if forloop.counter == 1%}
+                        <div id="collapse{{forloop.counter}}" class="collapse show" aria-labelledby="heading{{forloop.counter}}"
+                             data-parent="#accordionExample">
+                            {%else%}
+                            <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}"
+                             data-parent="#accordionExample">
+                            {%endif%}
+                            <div class="card-body">
+
+                                <div class="list-group" id="list-tab" role="tablist">
+                                    {%for subcategory in Subcategories%}
+                                    {%if subcategory.parent_id == node.id %}
+                                    {%if forloop.counter == 1%}
+                                    <a class="list-group-item list-group-item-action active" id="list-profile-{{forloop.counter}}"
+                                       data-toggle="list" href="#list-{{forloop.counter}}" role="tab"
+                                       aria-controls="{{forloop.counter}}">{{subcategory}}</a>
+                                    {%else%}
+                                    <a class="list-group-item list-group-item-action" id="list-profile-{{forloop.counter}}"
+                                       data-toggle="list" href="#list-{{forloop.counter}}" role="tab"
+                                       aria-controls="{{forloop.counter}}">{{subcategory}}</a>
+                                    {%endif%}
+                                    {%endif%}
+                                    {%endfor%}
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--                            <div class="card">-->
+                    <!--                                <div class="card-header" id="headingThree">-->
+                    <!--                                    <h5 class="mb-0">-->
+                    <!--                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"-->
+                    <!--                                            data-target="#collapseThree" aria-expanded="false"-->
+                    <!--                                            aria-controls="collapseThree">-->
+                    <!--                                            Разворачиваемая панель #3-->
+                    <!--                                        </button>-->
+                    <!--                                    </h5>-->
+                    <!--                                </div>-->
+                    <!--                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"-->
+                    <!--                                    data-parent="#accordionExample">-->
+                    <!--                                    <div class="card-body">-->
+                    <!--                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, ex!-->
+                    <!--                                    </div>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="products_by_category">
+                    <div class="tab-content" id="nav-tabContent">
+                        {%for subcategory in Subcategories%}
+                        {%if forloop.counter == 1%}
+                        <div class="tab-pane fade show active" id="list-{{forloop.counter}}" role="tabpanel"
+                             aria-labelledby="list-profile-{{forloop.counter}}">
+                            {%else%}
+                            <div class="tab-pane fade" id="list-{{forloop.counter}}" role="tabpanel"
+                             aria-labelledby="list-profile-{{forloop.counter}}">
+                            {%endif%}
+                            <div class="row justify-content-center">
+                                {%for product in Products%}
+                                {%if product.sub_category_id == subcategory.id%}
+                                <div class="col-md-6 col-lg-4">
+                                    <div
+                                            class="product_by_category_box d-flex flex-column align-items-center justify-content-between">
+                                        <img src="{{product.image.url}}" alt="" class="w-100" style="height: 300px">
+                                        <h2>{{product.name}}</h2>
+                                        <a href="{{product.get_absolute_url}}"></a>
+                                    </div>
+                                </div>
+                                {%endif%}
+                                {%endfor%}
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

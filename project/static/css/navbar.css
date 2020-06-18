@@ -1,0 +1,192 @@
+header .navbar {
+    padding: 10px 38px;
+    background-color: #f1f1f1;
+}
+.form-wrapper-nav{
+    position: relative;
+}
+.result{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 0;
+}
+.search-a:hover{
+     color: #7FB154;
+     background-color: #f1f1f1;
+}
+.search-a{
+    color: #6B6B6B;
+    font-size: 14px;
+    padding: 5px 10px;
+    font-family: 'SF UI Regular';
+    text-decoration: underline;
+}
+.navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.logo-text {
+    text-transform: uppercase;
+    color: #366232;
+    font-family: 'Montserrat Bold';
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.nav-item {
+    margin: 0 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.nav-item-text {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: #6B6B6B;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'BebasNeue-Bold';
+    padding: 0;
+}
+
+.nav-link:hover {
+    color: #7FB154;
+}
+
+.navbar-text,
+.navbar-text a {
+    color: rgba(107, 107, 107, 0.5);
+    text-transform: uppercase;
+    font-family: 'BebasNeue-Regular';
+    font-size: 20px;
+}
+
+.navbar-text a:hover {
+    color: rgba(107, 107, 107, 0.5);
+}
+
+.navbar-text img {
+    margin-right: 10px;
+}
+
+header .form-control {
+    background: #DBDBDB;
+    padding: 15px;
+    border: none;
+    border-radius: 0;
+}
+
+header .form-control::-webkit-input-placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(107, 107, 107, 0.5);
+    font-family: 'SF UI Regular';
+}
+
+header .form-control::-moz-placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(107, 107, 107, 0.5);
+    font-family: 'SF UI Regular';
+}
+
+header .form-control:-ms-input-placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(107, 107, 107, 0.5);
+    font-family: 'SF UI Regular';
+}
+
+header .form-control::-ms-input-placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(107, 107, 107, 0.5);
+    font-family: 'SF UI Regular';
+}
+
+header .form-control::placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(107, 107, 107, 0.5);
+    font-family: 'SF UI Regular';
+    text-align: center;
+}
+
+header .btn {
+    background: #7FB154;
+    border: none;
+    border-radius: 0;
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'SF UI Regular';
+    color: #FFFFFF;
+    padding: 9px 15px;
+}
+
+.header_navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.my-navbar {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header_navbar .form-inline {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+#burger {
+    display: none;
+}
+
+.label {
+    display: none;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/news_single.css' %}">
+{% endblock %}
+{% block content %}
+<section class="news">
+    <div class="container-fluid">
+        <h1 class="main_title">{{news.title}}</h1>
+        <div class="news_single_block">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="news_single_image">
+                        <img src="{{ news.image.url }}" alt="" class="w-100 h-100">
+                    </div>
+                    <p class="news_single_date">{{news.pub_date|date:"d M, Y"}}</p>
+                    <p class="news_single_text">{{news.description|safe|linebreaks}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="another_news_block d-flex flex-column align-items-center">
+            <h3 class="another_news_title">Другие новости</h3>
+            <div class="row justify-content-center">
+                {% for item in another_news %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="news-box-mini d-flex flex-column align-items-center w-100">
+                        <div class="news-poster w-100">
+                            <a href="{{item.get_absolute_url}}"><img src="{{item.image.url}}" alt="" class="w-100 h-100"></a>
+                        </div>
+                        <div class="news-text w-100">
+                            <h3 class=" w-100"><a href="{{item.get_absolute_url}}"> {{item.title}}</a></h3>
+                            <p class=" w-100">{{item.pub_date|date:"d M, Y"}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

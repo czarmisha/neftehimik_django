@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/product_single.css' %}">
+{% endblock %}
+{% block content %}
+<section class="products">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="product_by_category_box d-flex flex-column align-items-center justify-content-center"
+                     style="min-height: 380px; height: 100%;">
+                    <img src="{{product.image.url}}" alt="" class="w-100">
+                </div>
+            </div>
+            <div class=" col-md-6 col-lg-8 d-flex flex-column align-items-start justify-content-between">
+                <div class="product_detail">
+                    <h1>{{product.name}}</h1>
+                    <h3>характеристики</h3>
+                    {{product.options|safe|linebreaks}}
+                </div>
+                <button type="button" class="product_order" data-toggle="modal" data-target="#exampleModal">
+                    Заказать продукцию
+                </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="container-fluid">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="modal-image">
+                                            <img src="images/modal-manager.jpg" alt="" class="w-100">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="modal-form">
+                                            <form action="{%url 'send_message' product.pk%}" method="post">
+                                                {% csrf_token %}
+                                                <h2>Есть вопросы? Мы тебе поможем</h2>
+                                                <p>Мы с трепетом относимся к каждому клиенту, если у вас
+                                                    возникли вопросы по нашей продукции, смело звоните нам. Наши
+                                                    специалисты свяжутся с вами в кратчайшие сроки</p>
+                                                {% for input in Form %}
+                                                <div class="form-group">
+                                                    {{input}}
+                                                </div>
+                                                {%endfor%}
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" placeholder=""
+                                                           value="{{product.name}}"
+                                                           name="product" disabled>
+                                                </div>
+                                                <button type="submit">Отправить</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 products_text">
+                <h3>описание</h3>
+                <p class="product_description">{{product.description}}</p>
+            </div>
+        </div>
+        <h3>другие товары из подкатегории {{category}}</h3>
+        <div class="row justify-content-center">
+            {%for item in another_products%}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div
+                        class="product_by_category_box d-flex flex-column align-items-center justify-content-between">
+                    <img src="{{item.image.url}}" alt="" class="w-100" style="height:300px">
+                    <h2>{{item.name}}</h2>
+                    <a href="{{item.get_absolute_url}}"></a>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+{% endblock %}

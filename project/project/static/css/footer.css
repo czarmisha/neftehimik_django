@@ -1,0 +1,55 @@
+.footer-sicial {
+    padding: 35px 0;
+    background: #fff;
+}
+
+.footer-sicial li {
+    margin: 0 10px;
+}
+
+.slidel-social-link {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #686868;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.slidel-social-link.telegram {
+    background: url(../images/telegram.png)no-repeat center center;
+}
+
+.slidel-social-link.facebook {
+    background: url(../images/facebook.png)no-repeat center center;
+}
+
+.slidel-social-link.instagram {
+    background: url(../images/instagram.png)no-repeat center center;
+}
+
+.slidel-social-link.email {
+    background: url(../images/email.png)no-repeat center center;
+}
+
+.slidel-social-link.facebook:hover {
+    border: 1px solid #7FB154;
+    background: url(../images/facebook-hover.png)no-repeat center center;
+}
+
+.slidel-social-link.telegram:hover {
+    border: 1px solid #7FB154;
+    background: url(../images/telegram-hover.png)no-repeat center center;
+}
+
+.slidel-social-link.instagram:hover {
+    border: 1px solid #7FB154;
+    background: url(../images/instagram-hover.png)no-repeat center center;
+}
+
+.slidel-social-link.email:hover {
+    border: 1px solid #7FB154;
+    background: url(../images/email-hover.png)no-repeat center center;
+}

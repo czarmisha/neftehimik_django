@@ -1,0 +1,50 @@
+{% load static %}
+<nav class="header_navbar">
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{%static 'images/logo.png'%}" width="50" height="50" alt="" loading="lazy">
+        <span class="logo-text">Neftehimik</span>
+    </a>
+    <input type="checkbox" id="burger">
+    <label for="burger" class="label">
+        <span class="span"></span>
+    </label>
+    <div class="burger-menu" id="navbarSupportedContent">
+        <ul class="my-navbar mr-auto order-2 order-xl-1">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'products' %}">Каталог товаров</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about_us' %}">О компании</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'news' %}">Новости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+            </li>
+            <li class="nav-item nav-item-text">
+                <p class="navbar-text"><img src="{%static 'images/clock.png' %}" alt="">Пн-суб 09:00 - 18:00</p>
+            </li>
+            <li class="nav-item nav-item-text">
+                <p class="navbar-text"><img src="{%static 'images/tel.png' %}" alt=""><a href="tel:+998903554256">+998
+                    (90)
+                    355-42-56</a></p>
+            </li>
+        </ul>
+        <!--        action="{%url 'search'%}" method="get"-->
+        <div class="form-wrapper-nav order-1 order-xl-2">
+        <form method="POST" id="post-form">
+            {%csrf_token%}
+            <input class="form-control mr-sm-2" type="search" placeholder="Поиск товаров" name="search" id="post-text"
+                   autocomplete="off">
+            <!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>-->
+        </form>
+        <div class="result">
+
+        </div>
+            </div>
+    </div>
+</nav>

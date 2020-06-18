@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="about-us">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-10 about-us-shadows">
+                <h2 class="d-block d-lg-none">О КОМПАНИИ</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-1 order-lg-0">
+                        <div class="about-us-text d-flex flex-column align-items-start">
+                            <h2 class="d-none d-lg-block">О КОМПАНИИ</h2>
+                            <p>Компания NEFTEHIMIK является оптовым поставщиком лакокрасочных материалов,
+                                запорной арматуры, метизной продукции, полимеров, растворителей, нефтехимической
+                                и асбестотехнической продукции на территории Республики Узбекистан. </p>
+                            <p> Мы
+                                предлагаем Вам широкий ассортимент материалов для строительства и ремонта от
+                                ведущих зарубежных производителей по выгодным ценам.</p>
+                            <p>Обратившись к нам, Вы
+                                получите полную и достоверную информацию о товарах, гарантию лучшей цены на
+                                рынке и безупречный сервис. Обратившись к нам, Вы получите полную и достоверную
+                                информацию о товарах, гарантию лучшей цены на рынке и безупречный сервис.</p>
+                            <div class="about-us-statistic d-flex justify-content-between">
+                                <div
+                                        class="about-us-statistic-box d-flex justify-content-between align-items-center">
+                                    <span class="statistic-number">15</span>
+                                    <span class="statistic-text">лет<br>на рынке</span>
+                                </div>
+                                <div
+                                        class="about-us-statistic-box d-flex justify-content-between align-items-center">
+                                    <span class="statistic-number">110</span>
+                                    <span class="statistic-text">сотрудников<br>компании</span>
+                                </div>
+                                <div
+                                        class="about-us-statistic-box d-flex justify-content-between align-items-center">
+                                    <span class="statistic-number">3000</span>
+                                    <span class="statistic-text">постоянных<br>клиентов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-0 order-lg-1 about-us-img">
+                        <img src="{% static 'images/statistic.jpg'%}" alt="" class="w-100">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="day-project">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="{% static 'images/projectday.jpg'%}" alt="" class="d-block w-100">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="day-project-text">
+                            <h2>нащи ценности</h2>
+                            <ul>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-2">
+                                                    <span class="number">
+                                                        01
+                                                    </span>
+                                        </div>
+                                        <div class="col-10">
+                                            <h3>большой ассортимен</h3>
+                                            <p>У нас самое большое количество товаров разной продукции.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-2">
+                                                    <span class="number">
+                                                        01
+                                                    </span>
+                                        </div>
+                                        <div class="col-10">
+                                            <h3>большой ассортимен</h3>
+                                            <p>У нас самое большое количество товаров разной продукции.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-2">
+                                                    <span class="number">
+                                                        01
+                                                    </span>
+                                        </div>
+                                        <div class="col-10">
+                                            <h3>большой ассортимен</h3>
+                                            <p>У нас самое большое количество товаров разной продукции.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-2">
+                                                    <span class="number">
+                                                        01
+                                                    </span>
+                                        </div>
+                                        <div class="col-10">
+                                            <h3>большой ассортимен</h3>
+                                            <p>У нас самое большое количество товаров разной продукции.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="partners">
+    <div class="container-fluid">
+        <h2>наши партнеры</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-center mb-3">
+                <img src="{%static 'images/eriel.png'%}" class="" alt="">
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-center mb-3">
+                <img src="{%static 'images/enterengineering.png'%}" class="" alt="">
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-center mb-3">
+                <img src="{%static 'images/uzbekneftegaz.png'%}" class="" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

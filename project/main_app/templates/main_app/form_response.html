@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{%if response == 'ok'%}
+<style>
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    p{
+        text-align: center;
+        font-size: 20px;
+    }
+    .ok{
+        color: green;
+    }
+    .error{
+        color: red;
+    }
+</style>
+<p class="ok">Ваша заявка отправлена! Наш менеджер свяжется свами в кратчайшие сроки</p>
+{%else%}
+<p class="error">Произошла ошибка отправки заявки. Попробуйте еще раз в другое время! Спасибо за понимание</p>
+{%endif%}
+{% endblock %}
